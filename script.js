@@ -45,16 +45,9 @@ const takeNumber = function (bandName) {
         Write your awesome code here. See comments
         below for what should be returned.
     */
-{  bandNumber += 1
+  bandNumber += 1
     return `${bandNumber - 1}. ${bandName}`
     
-}
-
-
-
-
-
-
 
 }
 
@@ -65,6 +58,168 @@ const under = takeNumber("Underdogs")
 console.log(under)  // This should print "2. Underdogs" in the console
 
 
+// Practice: Cookout
+// Copy the following objects into your JavaScript file.
+
+const hamburger = {
+	name: 'Hamburger',
+	type: 'beef',
+	cooked: false,
+}
+const zucchini = {
+	name: 'Zucchini',
+	type: 'vegetable',
+	cooked: false,
+}
+const chickenBreast = {
+	name: 'Chicken Breast',
+	type: 'chicken',
+	cooked: false,
+}
+const corn = {
+	name: 'Corn',
+	type: 'vegetable',
+	cooked: false,
+}
+const steak = {
+	name: 'Steak',
+	type: 'beef',
+	cooked: false,
+}
+
+// An array that is grouping the objects together.
+const foods = [hamburger, zucchini, chickenBreast, corn, steak];
+
+// An empty array that will store the objects after the `grill()` function cooks the food.
+const cookedFood = [];
+
+// This exercise does not require you to alter this function. But read it. See if you can follow what it takes in, executes, and returns.
+
+// The grill() function. Copy this into your JavaScript as well.
+
+function grill (currentObject) {
+    // Modify the food so that it is cooked
+    currentObject.cooked = true;
+
+    // Put the cooked food into the appropriate array
+    cookedFood.push(currentObject);
+};
+
+// Your task is to iterate over the array of foods and invoke the function for each item so that the cookedFood array contains all of the items after they are cooked.
+for(let i=0; i < foods.length; i++) {
+    grill(foods[i]) 
+}
+console.log(cookedFood)
+
+
+// Practice: Overly Excited
+// For this exercise, you need to create a single JavaScript function named addExcitement that will use console.log() to print out a sentence to the browser console.
+
+// Create an addExcitement function that should console.log() rows of words. It should take an array containing the words of a sentence and output them in the developer console.
+
+let sentence = ["The","walrus","danced","through","the","trees","in","the","light","of","the","moon"];
+
+/*
+    The addExcitement function should be an impure function, and accept
+    the array as the sole argument. It should iterate over the array
+    and output the words to the browser console.
+*/
+function addExcitement (theWordArray) {
+
+    // Each time the for loop executes, you're going to add one more word to this string
+    let buildMeUp = ""
+
+    for (let i = 0; i < theWordArray.length; i++) {
+        // Concatenate the new word onto buildMeUp
+        // buildMeUp = buildMeUp + " " + theWordArray[i]
+        buildMeUp = `${buildMeUp} ${theWordArray[i]}`
+
+        // Print buildMeUp to the console
+        console.log(buildMeUp)
+    }
+
+}
+
+// Invoke the function and pass in the array
+// addExcitement(sentence)
+
+// Practice: Some words are more exciting than others
+// The learning objective of this exercise is to use the JavaScript if statement inside a loop to do one operation when a certain conditions is true, and a different operation if that condition is false.
+
+// Add logic to addExcitement that places an exclamation point (!) after every third word. Read the following English statement and write the equivalent in JavaSript code to make it work.
+
+// If the current value of the counter variable can be evenly divided by 3 (using the JavaScript remainder operator) add a single exclamation point (!) to the current word in the array.
+
+ sentence = ["","The","walrus","danced","through","the","trees","in","the","light","of","the","moon"];
+
+function addExcitement (theWordArray) {
+    let buildMeUp = ""
+    
+    for (let i = 0; i < theWordArray.length; i++) {
+        /*
+            If the current value of `i` divided by 3 has no
+            remainder, add an exclamation point to the end of
+            the word and then concatenate it to `buildMeUp`.
+
+            Otherwise, just concatenate the word itself.
+         */
+       
+        //  if(i % 3 === 0 && i > 0) {
+        //     buildMeUp = `${buildMeUp} ${theWordArray[i]}!`
+            
+        // } else {
+        //     buildMeUp = `${buildMeUp} ${theWordArray[i]}`
+ 
+        // }
+        if(i %3 === 0 && i > 0) {
+            buildMeUp = `${buildMeUp} ${theWordArray[i]}!`
+            
+        } else {
+            buildMeUp = `${buildMeUp} ${theWordArray[i]}`
+
+        } 
+        
+     
+
+
+        // Print buildMeUp to the console
+        console.log(buildMeUp)
+    }
+// return buildMeUp;
+}
+// const apple = addExcitement(sentence)
+// document.querySelector("body").innerHTML =apple
+
+
+// The learning objective of this exercise is to practice defining and using function arguments.
+
+// Add a new argument to the function so that a developer can specify which character should be displayed instead of it always being an exclamation point.
+
+function addExcitement (theWordArray, specialCharacter) {
+    let buildMeUp = ""
+    
+    for (let i = 0; i < theWordArray.length; i++) {
+
+        if(i %3 === 0 && i > 0) {
+            buildMeUp = `${buildMeUp} ${theWordArray[i]}${specialCharacter}`
+            
+        } else {
+            buildMeUp = `${buildMeUp} ${theWordArray[i]}`
+
+        } 
+        
+    
+
+
+        // Print buildMeUp to the console
+        
+        console.log(buildMeUp)
+    }
+
+
+}
+
+addExcitement(sentence, "?")
 
 
 
